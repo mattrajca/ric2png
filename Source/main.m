@@ -56,14 +56,14 @@ int main (int argc, const char *argv[]) {
 		[rep release];
 		
 		if (!outData) {
-			fprintf(stderr, "Cannot output a RIC file\n");
+			fprintf(stderr, "Cannot generate a RIC file\n");
 			return 1;
 		}
 		
 		path = [[path stringByDeletingPathExtension] stringByAppendingPathExtension:@"ric"];
 		
 		if (![outData writeToFile:path options:0 error:&error]) {
-			fprintf(stderr, "Cannot output a RIC file (%ld)\n", [error code]);
+			fprintf(stderr, "Cannot write the output RIC file to disk (%ld)\n", [error code]);
 			return 1;
 		}
 	}
@@ -79,14 +79,14 @@ int main (int argc, const char *argv[]) {
 		[rep release];
 		
 		if (!pngData) {
-			fprintf(stderr, "Cannot output a PNG file\n");
+			fprintf(stderr, "Cannot generate a PNG file\n");
 			return 1;
 		}
 		
 		path = [[path stringByDeletingPathExtension] stringByAppendingPathExtension:@"png"];
 		
 		if (![pngData writeToFile:path options:0 error:&error]) {
-			fprintf(stderr, "Cannot output a PNG file (%ld)\n", [error code]);
+			fprintf(stderr, "Cannot write the output PNG file to disk (%ld)\n", [error code]);
 			return 1;
 		}
 	}
