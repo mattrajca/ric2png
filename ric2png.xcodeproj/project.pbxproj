@@ -1,0 +1,221 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9E9B20A141BE96D0009E200 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E9B209141BE96D0009E200 /* Foundation.framework */; };
+		C9E9B21B141BE9A50009E200 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E9B21A141BE9A50009E200 /* AppKit.framework */; };
+		C9E9B233141C0E680009E200 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E9B22F141C0E680009E200 /* main.m */; };
+		C9E9B234141C0E680009E200 /* NSBitmapImageRep+RIC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E9B231141C0E680009E200 /* NSBitmapImageRep+RIC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C9E9B205141BE96D0009E200 /* ric2png */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ric2png; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E9B209141BE96D0009E200 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9E9B21A141BE9A50009E200 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C9E9B22F141C0E680009E200 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9E9B230141C0E680009E200 /* NSBitmapImageRep+RIC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBitmapImageRep+RIC.h"; sourceTree = "<group>"; };
+		C9E9B231141C0E680009E200 /* NSBitmapImageRep+RIC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBitmapImageRep+RIC.m"; sourceTree = "<group>"; };
+		C9E9B232141C0E680009E200 /* ric2png-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ric2png-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9E9B202141BE96D0009E200 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E9B21B141BE9A50009E200 /* AppKit.framework in Frameworks */,
+				C9E9B20A141BE96D0009E200 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9E9B1FA141BE96C0009E200 = {
+			isa = PBXGroup;
+			children = (
+				C9E9B22E141C0E680009E200 /* Source */,
+				C9E9B208141BE96D0009E200 /* Frameworks */,
+				C9E9B206141BE96D0009E200 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9E9B206141BE96D0009E200 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9E9B205141BE96D0009E200 /* ric2png */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9E9B208141BE96D0009E200 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9E9B21A141BE9A50009E200 /* AppKit.framework */,
+				C9E9B209141BE96D0009E200 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9E9B22E141C0E680009E200 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C9E9B22F141C0E680009E200 /* main.m */,
+				C9E9B230141C0E680009E200 /* NSBitmapImageRep+RIC.h */,
+				C9E9B231141C0E680009E200 /* NSBitmapImageRep+RIC.m */,
+				C9E9B232141C0E680009E200 /* ric2png-Prefix.pch */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9E9B204141BE96D0009E200 /* ric2png */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9E9B214141BE96D0009E200 /* Build configuration list for PBXNativeTarget "ric2png" */;
+			buildPhases = (
+				C9E9B201141BE96D0009E200 /* Sources */,
+				C9E9B202141BE96D0009E200 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ric2png;
+			productName = convertric;
+			productReference = C9E9B205141BE96D0009E200 /* ric2png */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9E9B1FC141BE96C0009E200 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Matt Rajca";
+			};
+			buildConfigurationList = C9E9B1FF141BE96C0009E200 /* Build configuration list for PBXProject "ric2png" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C9E9B1FA141BE96C0009E200;
+			productRefGroup = C9E9B206141BE96D0009E200 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9E9B204141BE96D0009E200 /* ric2png */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9E9B201141BE96D0009E200 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E9B233141C0E680009E200 /* main.m in Sources */,
+				C9E9B234141C0E680009E200 /* NSBitmapImageRep+RIC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C9E9B212141BE96D0009E200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C9E9B213141BE96D0009E200 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C9E9B215141BE96D0009E200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/ric2png-Prefix.pch";
+				PRODUCT_NAME = ric2png;
+			};
+			name = Debug;
+		};
+		C9E9B216141BE96D0009E200 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/ric2png-Prefix.pch";
+				PRODUCT_NAME = ric2png;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9E9B1FF141BE96C0009E200 /* Build configuration list for PBXProject "ric2png" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E9B212141BE96D0009E200 /* Debug */,
+				C9E9B213141BE96D0009E200 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9E9B214141BE96D0009E200 /* Build configuration list for PBXNativeTarget "ric2png" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E9B215141BE96D0009E200 /* Debug */,
+				C9E9B216141BE96D0009E200 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9E9B1FC141BE96C0009E200 /* Project object */;
+}
