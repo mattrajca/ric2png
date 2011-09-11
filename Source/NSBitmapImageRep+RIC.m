@@ -27,7 +27,7 @@ enum {
 };
 
 struct ric_opcode {
-	uint16_t len;
+	uint16_t length;
 	uint16_t opcode;
 } __attribute__ ((packed));
 
@@ -40,9 +40,9 @@ struct ric_description {
 
 struct ric_sprite {
 	struct ric_opcode header;
-	uint16_t dataaddr;
+	uint16_t data_addr;
 	uint16_t rows;
-	uint16_t rowbytes;
+	uint16_t row_bytes;
 	uint8_t data[0];
 } __attribute__ ((packed));
 
@@ -60,7 +60,7 @@ struct ric_rect {
 struct ric_copybits {
 	struct ric_opcode header;
 	uint16_t options;
-	uint16_t dataaddr;
+	uint16_t data_addr;
 	struct ric_rect src;
 	struct ric_point dest;
 } __attribute__ ((packed));
@@ -84,7 +84,7 @@ struct ric_copybits {
 		if (sprite != NULL && copybits != NULL)
 			break;
 		
-		n += opcode->len + 2;
+		n += opcode->length + 2;
 	}
 	
 	if (sprite == NULL || copybits == NULL)
@@ -115,7 +115,7 @@ struct ric_copybits {
 			}
 		}
 		
-		bytes += sprite->rowbytes;
+		bytes += sprite->row_bytes;
 	}
 	
 	return self;
@@ -125,30 +125,30 @@ struct ric_copybits {
 	uint16_t width = (uint16_t) [self size].width;
 	uint16_t height = (uint16_t) [self size].height;
 	
-	unsigned int rowbytes = (width - 1) / 8 + 1;
-	size_t bitmap_size = MAKE_EVEN(rowbytes*height);
-	NSUInteger bufsize = sizeof(struct ric_description) + sizeof(struct ric_sprite) + bitmap_size + sizeof(struct ric_copybits);
+	unsigned int rowBytes = (width - 1) / 8 + 1;
+	size_t bitmapSize = MAKE_EVEN(rowBytes * height);
+	NSUInteger bufferSize = sizeof(struct ric_description) + sizeof(struct ric_sprite) + bitmapSize + sizeof(struct ric_copybits);
 	
-	NSMutableData *data = [[NSMutableData alloc] initWithCapacity:bufsize];
+	NSMutableData *data = [[NSMutableData alloc] initWithCapacity:bufferSize];
 	
 	struct ric_description desc;
 	bzero(&desc, sizeof(desc));
 	
-	desc.header.len = sizeof(struct ric_description) - 2;
+	desc.header.length = sizeof(struct ric_description) - 2;
 	desc.header.opcode = RIC_OPCODE_DESCRIPTION;
 	desc.width = width;
 	desc.height = height;
 	
 	[data appendBytes:&desc length:sizeof(desc)];
 	
-	struct ric_sprite *sprite = malloc(sizeof(struct ric_sprite) + bitmap_size);
-	bzero(sprite, sizeof(struct ric_sprite) + bitmap_size);
+	struct ric_sprite *sprite = malloc(sizeof(struct ric_sprite) + bitmapSize);
+	bzero(sprite, sizeof(struct ric_sprite) + bitmapSize);
 	
-	sprite->header.len = sizeof(struct ric_sprite) - 2 + bitmap_size;
+	sprite->header.length = sizeof(struct ric_sprite) - 2 + bitmapSize;
 	sprite->header.opcode = RIC_OPCODE_SPRITE;
-	sprite->dataaddr = 1;
+	sprite->data_addr = 1;
 	sprite->rows = height;
-	sprite->rowbytes = rowbytes;
+	sprite->row_bytes = rowBytes;
 	
 	uint8_t *bytes = (uint8_t *) sprite->data;
 	
@@ -159,24 +159,22 @@ struct ric_copybits {
 			}
 		}
 		
-		bytes += rowbytes;
+		bytes += rowBytes;
 	}
 	
-	[data appendBytes:sprite length:sizeof(struct ric_sprite) + bitmap_size];
+	[data appendBytes:sprite length:sizeof(struct ric_sprite) + bitmapSize];
 	
 	struct ric_copybits copy;
 	bzero(&copy, sizeof(copy));
 	
-	copy.header.len = sizeof(struct ric_copybits) - 2;
+	copy.header.length = sizeof(struct ric_copybits) - 2;
 	copy.header.opcode = RIC_OPCODE_COPYBITS;
 	copy.options = RIC_COPY;
-	copy.dataaddr = 1;
-	copy.src.point.x = 0;
-	copy.src.point.y = 0;
+	copy.data_addr = 1;
+	copy.src.point.x = copy.src.point.y = 0;
 	copy.src.width = width;
 	copy.src.height = height;
-	copy.dest.x = 0;
-	copy.dest.y = 0;
+	copy.dest.x = copy.dest.y = 0;
 	
 	[data appendBytes:&copy length:sizeof(copy)];
 	
